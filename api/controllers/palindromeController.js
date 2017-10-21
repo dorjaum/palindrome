@@ -19,7 +19,7 @@ function palindromeAnalisis(word){
   if(odd > 0){
     verifyOddWord(word, wordLength);
   }else {
-    verifyPairWord(word, wordLength);
+    return verifyPairWord(word, wordLength);
   }
 
   return true;
@@ -29,12 +29,18 @@ function verifyPairWord(word, length){
   var halfLength = wordLength /2;
   var firstHalf = word.substring(0, halfLength);
   var secondHalf = word.substring(halfLength+1, wordLength);
+  var listFirstHalf = firstHalf.split("");
+  var listSecondHalf = secondHalf.split("");
+  var lastPosition = secondHalf.length;
 
-  //while(){
-
-  //}
+  listFirstHalf.forEach(function(letter){
+    if(letter != listSecondHalf[lastPosition]){
+      return false;
+    }
+    lastPosition--;
+  });
 }
 
 function verifyOddWord(word, length){
-  
+
 }
