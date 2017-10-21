@@ -40,7 +40,7 @@ function verifyPairWord(word){
     console.log(lastPosition);
     console.log(letter + " = " + listSecondHalf[lastPosition]);
     if(letter != listSecondHalf[lastPosition]){
-      isPalindrome = false;
+      isPalindrome = false; 
     }
   });
 
