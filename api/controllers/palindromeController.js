@@ -1,19 +1,40 @@
 exports.isAPalindrome = function(req, res) {
-  console.log("entrou");
-  var result = giveMeAWord("xa");
-  var msg = '400 : isnt a palindrome ' + result;
-  var err = {message: '400 : isnt a palindrome'};
-    if (err)
-      res.send(err);
+  var word = req.body.word;
 
-    res.json({message: '200 ok'});
+  var isPalindrome = palindromeAnalisis(word);
+  if(isPalindrome){
+    var msgStatus200 = {message: '200 : is a palindrome = '+ word};
+    res.status(200).send(msgStatus200);
+  }else{
+    var msgStatus400 = {message: '400 : isnt a palindrome = ' + word};
+    res.status(400).send(msgStatus400);
+  }
 
 };
 
-function giveMeAWord(word){
+function palindromeAnalisis(word){
   var wordLength = word.length;
   var odd = wordLength % 2;
 
+  if(odd > 0){
+    verifyOddWord(word, wordLength);
+  }else {
+    verifyPairWord(word, wordLength);
+  }
 
-  return odd;
+  return true;
+}
+
+function verifyPairWord(word, length){
+  var halfLength = wordLength /2;
+  var firstHalf = word.substring(0, halfLength);
+  var secondHalf = word.substring(halfLength+1, wordLength);
+
+  //while(){
+
+  //}
+}
+
+function verifyOddWord(word, length){
+  
 }
