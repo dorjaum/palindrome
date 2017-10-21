@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/dorjaum/palindrome/issues"
   },
-  "homepage": "https://github.com/dorjaum/palindrome#readme"
+  "homepage": "https://github.com/dorjaum/palindrome#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
