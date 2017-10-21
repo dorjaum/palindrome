@@ -1,12 +1,12 @@
 exports.isAPalindrome = function(req, res) {
   var word = req.body.word;
-  console.log(word);
   var isPalindrome = palindromeAnalisis(word);
+
   if(isPalindrome){
-    var msgStatus200 = {message: '200 : is a palindrome = '+ word};
+    var msgStatus200 = {message: 'Is a palindrome = '+ word};
     res.status(200).send(msgStatus200);
   }else{
-    var msgStatus400 = {message: '400 : isnt a palindrome = ' + word};
+    var msgStatus400 = {message: 'Isnt a palindrome = ' + word};
     res.status(400).send(msgStatus400);
   }
 
@@ -34,13 +34,11 @@ function verifyPairWord(word){
   var listSecondHalf = secondHalf.split("");
   var lastPosition = secondHalf.length;
   var isPalindrome = true;
+
   listFirstHalf.forEach(function(letter){
-    //console.log(letter);
     lastPosition = lastPosition - 1;
-    console.log(lastPosition);
-    console.log(letter + " = " + listSecondHalf[lastPosition]);
     if(letter != listSecondHalf[lastPosition]){
-      isPalindrome = false; 
+      isPalindrome = false;
     }
   });
 
